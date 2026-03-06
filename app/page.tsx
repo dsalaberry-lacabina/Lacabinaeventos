@@ -140,6 +140,7 @@ export default function Home() {
             text="Videos increíbles en cámara lenta para compartir en redes."
             link="/plataforma-360"
             image="/servicios/plataforma360.jpg"
+            video="/servicios/plataforma360.mp4"
           />
 
           <Service
@@ -163,23 +164,25 @@ export default function Home() {
       {/* GALERÍA */}
       <section style={{ padding: "80px 20px", textAlign: "center" }}>
         <h2 style={{ fontSize: "36px" }}>
-          Momentos de nuestros eventos
+           Momentos de nuestros eventos
         </h2>
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-            gap: "15px",
-            marginTop: "40px"
+           style={{
+           display: "grid",
+           gridTemplateColumns: "repeat(6, 1fr)",
+           gap: "10px",
+           marginTop: "40px"
           }}
-        >
-          <img src="/galeria/foto1.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-          <img src="/galeria/foto2.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-          <img src="/galeria/foto3.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-          <img src="/galeria/foto4.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-          <img src="/galeria/foto5.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-          
+         >
+
+          <GalleryImage src="/galeria/foto1.jpg" />
+          <GalleryImage src="/galeria/foto2.jpg" />
+          <GalleryImage src="/galeria/foto3.jpg" />
+          <GalleryImage src="/galeria/foto4.jpg" />
+          <GalleryImage src="/galeria/foto5.jpg" />
+          <GalleryImage src="/galeria/foto6.jpg" />
+
         </div>
       </section>
 
@@ -286,33 +289,39 @@ export default function Home() {
 function Service({
   title,
   link,
-  image
+  image,
+  video
 }: {
-  title: string;
-  link: string;
-  image: string;
+  title: string
+  link: string
+  image: string
+  video?: string
 }) {
-  const [hover, setHover] = useState(false);
+
+  const [hover, setHover] = useState(false)
 
   return (
     <Link href={link} style={{ textDecoration: "none", color: "white" }}>
+      
       <div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         style={{
           position: "relative",
+          width: "100%",
           height: "260px",
           borderRadius: "14px",
           overflow: "hidden",
           cursor: "pointer",
-          transform: hover ? "scale(1.03)" : "scale(1)",
+          transform: hover ? "translateY(-4px)" : "translateY(0)",
           transition: "all 0.3s ease",
           boxShadow: hover
-            ? "0 20px 40px rgba(0,0,0,0.25)"
+            ? "0 15px 35px rgba(0,0,0,0.25)"
             : "0 5px 15px rgba(0,0,0,0.08)"
         }}
       >
-        {/* FOTO */}
+
+        {/* IMAGEN */}
         <img
           src={image}
           style={{
@@ -321,9 +330,33 @@ function Service({
             left: 0,
             width: "100%",
             height: "100%",
-            objectFit: "cover"
+            objectFit: "cover",
+            opacity: hover && video ? 0 : 1,
+            transform: hover ? "scale(1.08)" : "scale(1)",
+            transition: "all 0.6s ease"
           }}
         />
+
+        {/* VIDEO */}
+        {video && (
+          <video
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: hover ? 1 : 0,
+              transition: "opacity 0.4s ease"
+            }}
+          />
+        )}
 
         {/* OVERLAY */}
         <div
@@ -331,7 +364,7 @@ function Service({
             position: "absolute",
             width: "100%",
             height: "100%",
-            background: "linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7))"
+            background: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.75))"
           }}
         />
 
@@ -351,9 +384,106 @@ function Service({
             Ver detalles →
           </span>
         </div>
+
       </div>
+
     </Link>
-  );
+  )
+}
+
+function Service360({
+  title,
+  link,
+  image,
+  video
+}: {
+  title: string
+  link: string
+  image: string
+  video: string
+}) {
+
+  const [hover, setHover] = useState(false)
+
+  return (
+    <Link href={link} style={{ textDecoration: "none", color: "white" }}>
+
+      <div
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "260px",
+          borderRadius: "14px",
+          overflow: "hidden",
+          cursor: "pointer",
+          transform: hover ? "translateY(-4px)" : "translateY(0)",
+          transition: "all 0.3s ease"
+        }}
+      >
+
+        {/* FOTO */}
+        <img
+          src={image}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: hover ? 0 : 1,
+            transition: "opacity 0.4s ease"
+          }}
+        />
+
+        {/* VIDEO */}
+        <video
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: hover ? 1 : 0,
+            transition: "opacity 0.4s ease"
+          }}
+        />
+
+        {/* OVERLAY */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.75))"
+          }}
+        />
+
+        {/* TEXTO */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "20px",
+            left: "20px"
+          }}
+        >
+          <h3 style={{ fontSize: "22px", marginBottom: "5px" }}>
+            {title}
+          </h3>
+
+          <span style={{ fontWeight: "bold", fontSize: "14px" }}>
+            Ver detalles →
+          </span>
+        </div>
+
+      </div>
+
+    </Link>
+  )
 }
 
 function Combo({ title, text }: { title: string; text: string }) {
@@ -369,5 +499,56 @@ function Combo({ title, text }: { title: string; text: string }) {
       <h3>{title}</h3>
       <p>{text}</p>
     </div>
-  );
+  )
+}
+
+function GalleryImage({ src }: { src: string }) {
+
+  const [open, setOpen] = useState(false)
+
+  return (
+    <>
+      {/* MINIATURA */}
+      <img
+        src={src}
+        onClick={() => setOpen(true)}
+        style={{
+          width: "100%",
+          height: "140px",
+          objectFit: "cover",
+          borderRadius: "8px",
+          cursor: "pointer",
+          transition: "transform 0.2s ease"
+        }}
+      />
+
+      {/* FOTO GRANDE */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.92)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999
+          }}
+        >
+          <img
+            src={src}
+            style={{
+              maxWidth: "92%",
+              maxHeight: "92%",
+              borderRadius: "10px"
+            }}
+          />
+        </div>
+      )}
+    </>
+  )
 }
