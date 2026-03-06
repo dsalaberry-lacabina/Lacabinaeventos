@@ -123,21 +123,18 @@ export default function Home() {
 
           <Service
             title="Cabina de Fotos"
-            text="Fotos ilimitadas, impresiones instantáneas y cotillón premium."
             link="/cabina"
             image="/servicios/cabina.jpg"
           />
 
           <Service
             title="Cabina Glam"
-            text="Fotos elegantes en blanco y negro con iluminación profesional."
             link="/cabina-glam"
             image="/servicios/glam.jpg"
           />
 
           <Service
             title="Plataforma 360°"
-            text="Videos increíbles en cámara lenta para compartir en redes."
             link="/plataforma-360"
             image="/servicios/plataforma360.jpg"
             video="/servicios/plataforma360.mp4"
@@ -145,14 +142,12 @@ export default function Home() {
 
           <Service
             title="Memory Phone"
-            text="Mensajes de audio de tus invitados como recuerdo del evento."
             link="/memory-phone"
             image="/servicios/memoryphone.jpg"
           />
 
           <Service
             title="Fotoimanes"
-            text="Fotos impresas convertidas en imanes para llevar a casa."
             link="/fotoimanes"
             image="/servicios/fotoimanes.jpg"
           />
