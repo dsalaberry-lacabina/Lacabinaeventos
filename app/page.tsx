@@ -7,7 +7,22 @@ export default function Home() {
   return (
     <main style={{ fontFamily: "Arial, sans-serif" }}>
 
-      {/* HERO CON VIDEO */}
+      <style>
+        {`
+          @keyframes fadeLogo {
+            from {
+              opacity: 0;
+              transform: scale(0.9);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        `}
+      </style>
+
+      {/* HERO */}
       <section
         style={{
           position: "relative",
@@ -15,12 +30,13 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "white",
           textAlign: "center",
-          overflow: "hidden"
+          overflow: "hidden",
+          color: "white"
         }}
       >
 
+        {/* VIDEO */}
         <video
           autoPlay
           muted
@@ -33,16 +49,37 @@ export default function Home() {
             objectFit: "cover",
             top: 0,
             left: 0,
-            zIndex: -1
+            zIndex: -2
           }}
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
 
+        {/* OVERLAY */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.55)",
+            top: 0,
+            left: 0,
+            zIndex: -1
+          }}
+        />
+
         <div>
-          <h1 style={{ fontSize: "52px", marginBottom: "10px" }}>
-            La Cabina Eventos
-          </h1>
+
+          <img
+            src="/logo.png"
+            style={{
+              width: "100%",
+              maxWidth: "600px",
+              marginBottom: "1px",
+              opacity: 0,
+              animation: "fadeLogo 1.5s ease forwards"
+            }}
+          />
 
           <p style={{ fontSize: "20px" }}>
             Cabina de Fotos · Plataforma 360 · Memory Phone · Fotoimanes
@@ -52,24 +89,25 @@ export default function Home() {
             <button
               style={{
                 marginTop: "25px",
-                padding: "15px 30px",
+                padding: "16px 34px",
                 fontSize: "18px",
-                borderRadius: "8px",
+                borderRadius: "10px",
                 border: "none",
+                background: "white",
+                fontWeight: "600",
                 cursor: "pointer"
               }}
             >
               Ver servicios
             </button>
           </a>
-        </div>
 
+        </div>
       </section>
 
 
       {/* SERVICIOS */}
       <section id="servicios" style={{ padding: "80px 20px", textAlign: "center" }}>
-
         <h2 style={{ fontSize: "36px" }}>
           Nuestros Servicios
         </h2>
@@ -119,39 +157,32 @@ export default function Home() {
           />
 
         </div>
-
       </section>
 
+
       {/* GALERÍA */}
-      <section
-        style={{
-        padding: "80px 20px",
-        textAlign: "center"
-      }}
-      >
+      <section style={{ padding: "80px 20px", textAlign: "center" }}>
+        <h2 style={{ fontSize: "36px" }}>
+          Momentos de nuestros eventos
+        </h2>
 
-      <h2 style={{ fontSize: "36px" }}>
-        Momentos de nuestros eventos
-      </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+            gap: "15px",
+            marginTop: "40px"
+          }}
+        >
+          <img src="/galeria/foto1.jpg" style={{ width: "100%", borderRadius: "10px" }} />
+          <img src="/galeria/foto2.jpg" style={{ width: "100%", borderRadius: "10px" }} />
+          <img src="/galeria/foto3.jpg" style={{ width: "100%", borderRadius: "10px" }} />
+          <img src="/galeria/foto4.jpg" style={{ width: "100%", borderRadius: "10px" }} />
+          <img src="/galeria/foto5.jpg" style={{ width: "100%", borderRadius: "10px" }} />
+          
+        </div>
+      </section>
 
-      <div
-        style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-        gap: "15px",
-        marginTop: "40px"
-      }}
-      >
-
-        <img src="/galeria/foto1.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-        <img src="/galeria/foto2.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-        <img src="/galeria/foto3.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-        <img src="/galeria/foto4.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-        <img src="/galeria/foto5.jpg" style={{ width: "100%", borderRadius: "10px" }} />
-
-      </div>
-
-</section>
 
       {/* COMBOS */}
       <section
@@ -161,7 +192,6 @@ export default function Home() {
           textAlign: "center"
         }}
       >
-
         <h2 style={{ fontSize: "36px" }}>
           Combos recomendados
         </h2>
@@ -175,23 +205,13 @@ export default function Home() {
           }}
         >
 
-          <Combo
-            title="Combo Fiesta"
-            text="Cabina de Fotos + Fotoimanes"
-          />
+          <Combo title="Combo Fiesta" text="Cabina de Fotos + Fotoimanes" />
 
-          <Combo
-            title="Combo Experiencia"
-            text="Cabina de Fotos + Plataforma 360°"
-          />
+          <Combo title="Combo Experiencia" text="Cabina de Fotos + Plataforma 360°" />
 
-          <Combo
-            title="Combo Recuerdos"
-            text="Cabina de Fotos + Memory Phone"
-          />
+          <Combo title="Combo Recuerdos" text="Cabina de Fotos + Memory Phone" />
 
         </div>
-
       </section>
 
 
@@ -204,7 +224,6 @@ export default function Home() {
           color: "white"
         }}
       >
-
         <h2 style={{ fontSize: "36px" }}>
           ¿Listo para tu evento?
         </h2>
@@ -213,10 +232,7 @@ export default function Home() {
           Consultá disponibilidad para tu fecha
         </p>
 
-        <a
-          href="https://wa.me/5493446642745"
-          target="_blank"
-        >
+        <a href="https://wa.me/5493446642745" target="_blank">
           <button
             style={{
               marginTop: "30px",
@@ -230,7 +246,6 @@ export default function Home() {
             Consultar por WhatsApp
           </button>
         </a>
-
       </section>
 
 
@@ -268,17 +283,8 @@ export default function Home() {
   );
 }
 
-function Service({
-  title,
-  text,
-  link,
-  icon
-}: {
-  title: string;
-  text: string;
-  link: string;
-  icon: string;
-}) {
+
+function Service({ title, text, link, icon }: { title: string; text: string; link: string; icon: string }) {
   const [hover, setHover] = useState(false);
 
   return (

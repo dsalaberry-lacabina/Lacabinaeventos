@@ -87,30 +87,35 @@ export default function Home() {
             title="Cabina de Fotos"
             text="Fotos ilimitadas, impresiones instantáneas y cotillón premium."
             link="/cabina"
+            icon="📸"
           />
 
           <Service
             title="Cabina Glam"
             text="Fotos elegantes en blanco y negro con iluminación profesional."
             link="/cabina-glam"
+            icon="✨"
           />
 
           <Service
             title="Plataforma 360°"
             text="Videos increíbles en cámara lenta para compartir en redes."
             link="/plataforma-360"
+            icon="🎥"
           />
 
           <Service
             title="Memory Phone"
             text="Mensajes de audio de tus invitados como recuerdo del evento."
             link="/memory-phone"
+            icon="☎️"
           />
 
           <Service
             title="Fotoimanes"
             text="Fotos impresas convertidas en imanes para llevar a casa."
             link="/fotoimanes"
+            icon="🧲"
           />
 
         </div>
@@ -263,39 +268,51 @@ export default function Home() {
   );
 }
 
-function Service({ title, text, link }: { title: string; text: string; link: string }) {
-
+function Service({
+  title,
+  text,
+  link,
+  icon
+}: {
+  title: string;
+  text: string;
+  link: string;
+  icon: string;
+}) {
   const [hover, setHover] = useState(false);
 
   return (
     <Link href={link} style={{ textDecoration: "none", color: "inherit" }}>
-
       <div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         style={{
-          padding: "25px",
-          border: "1px solid #ddd",
-          borderRadius: "12px",
+          padding: "30px",
+          borderRadius: "14px",
           background: "white",
           cursor: "pointer",
           transition: "all 0.25s ease",
-          transform: hover ? "translateY(-6px)" : "translateY(0px)",
+          transform: hover ? "translateY(-6px)" : "translateY(0)",
           boxShadow: hover
-            ? "0 15px 35px rgba(0,0,0,0.15)"
-            : "0 5px 15px rgba(0,0,0,0.05)"
+            ? "0 20px 40px rgba(0,0,0,0.15)"
+            : "0 5px 15px rgba(0,0,0,0.06)",
+          textAlign: "center"
         }}
       >
-        <h3 style={{ marginBottom: "10px" }}>{title}</h3>
-
-        <p>{text}</p>
-
-        <div style={{ marginTop: "15px", fontWeight: "bold" }}>
-          Ver más →
+        <div style={{ fontSize: "42px", marginBottom: "10px" }}>
+          {icon}
         </div>
 
-      </div>
+        <h3 style={{ marginBottom: "10px" }}>{title}</h3>
 
+        <p style={{ fontSize: "15px", opacity: 0.8 }}>
+          {text}
+        </p>
+
+        <div style={{ marginTop: "15px", fontWeight: "bold" }}>
+          Ver detalles →
+        </div>
+      </div>
     </Link>
   );
 }
