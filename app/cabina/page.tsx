@@ -1,156 +1,123 @@
+import ServicePage from "../../components/ServicePage"
+
 export default function CabinaPage() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif" }}>
+    <ServicePage
+      title="Cabina de Fotos"
+      subtitle="Diversión, recuerdos y fotos instantáneas para tu evento"
+    >
 
-      {/* HERO */}
-      <section
-         style={{
-           padding: "100px 20px",
-           background: "#111",
-           color: "white"
-         }}
-     >
-
-    <div
-      style={{
-      maxWidth: "900px",
-      margin: "0 auto",
-      display: "flex",
-      alignItems: "center",
-      gap: "25px",
-      justifyContent: "center"
-    }}
-   >
-
-    <img
-      src="/servicios/cabina-logo.png"
-      style={{
-        width: "500px"
-      }}
-    />
-
-    <div style={{ textAlign: "left" }}>
-      <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
-        Cabina de Fotos
-      </h1>
-
-      <p style={{ fontSize: "20px", opacity: 0.8 }}>
-        Diversión, recuerdos y fotos instantáneas para tu evento
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-
-      {/* FOTO */}
-      <section
+      <div
         style={{
-          padding: "60px 20px",
-          display: "flex",
-          justifyContent: "center"
+          display: "grid",
+          gridTemplateColumns: "1fr 1.3fr",
+          gap: "100px",
+          alignItems: "start",
+          marginTop: "50px"
         }}
       >
+
+        {/* FOTO */}
         <img
           src="/galeria/foto1.jpg"
           style={{
-            maxWidth: "900px",
             width: "100%",
             borderRadius: "12px"
           }}
         />
-      </section>
+
+        {/* TEXTO */}
+        <div>
+
+          <h2 style={{ marginBottom: "20px" }}>
+            La experiencia de la cabina
+          </h2>
+
+          <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
+            Nuestra cabina de fotos es uno de los servicios más elegidos para
+            cumpleaños de 15, bodas y eventos sociales. Los invitados pueden
+            sacarse fotos divertidas, recibir impresiones al instante y llevarse
+            un recuerdo único del evento.
+          </p>
+
+          {/* QUE INCLUYE */}
+          <div style={{ marginTop: "50px" }}>
+
+            <h2>¿Qué incluye el servicio?</h2>
+
+            <div style={{ marginTop: "20px", fontSize: "18px", lineHeight: "1.8" }}>
+
+              <p>📸 Fotos ilimitadas durante el evento con camara profesional Nikon</p>
+              <p>🖨 Impresiones instantáneas de calidad Kodak</p>
+              <p>🎭 Cotillón premium para las fotos</p>
+              <p>👨‍💼 Asistente durante todo el servicio</p>
+              <p>📂 Galería digital con todas las fotos</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
-      {/* DESCRIPCIÓN */}
-      <section
-        style={{
-          padding: "60px 20px",
-          maxWidth: "900px",
-          margin: "0 auto",
-          textAlign: "center"
-        }}
-      >
+      {/* COMO FUNCIONA */}
+      <div style={{ marginTop: "70px" }}>
 
-        <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>
-          La experiencia de la Cabina
-        </h2>
-
-        <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
-          Nuestra cabina de fotos es uno de los servicios más elegidos para
-          cumpleaños, bodas y eventos. Los invitados pueden sacarse fotos
-          divertidas, recibir impresiones al instante y llevarse un recuerdo
-          único del evento.
-        </p>
-
-      </section>
-
-
-      {/* QUE INCLUYE */}
-      <section
-        style={{
-          padding: "80px 20px",
-          background: "#f5f5f5",
-          textAlign: "center"
-        }}
-      >
-
-        <h2 style={{ fontSize: "32px", marginBottom: "40px" }}>
-          ¿Qué incluye el servicio?
+        <h2 style={{ marginBottom: "30px" }}>
+          ¿Cómo funciona la cabina?
         </h2>
 
         <div
           style={{
-            maxWidth: "800px",
-            margin: "0 auto",
-            textAlign: "left",
-            fontSize: "18px",
-            lineHeight: "1.8"
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
+            gap: "30px",
+            marginTop: "30px"
           }}
         >
 
-          <p>📸 Fotos ilimitadas durante el evento</p>
-          <p>🖨 Impresiones instantáneas</p>
-          <p>🎭 Cotillón divertido para las fotos</p>
-          <p>👨‍💼 Asistente durante todo el servicio</p>
-          <p>📂 Galería digital con todas las fotos</p>
+          <div
+            style={{
+              padding: "25px",
+              borderRadius: "12px",
+              background: "#f5f5f5"
+            }}
+          >
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>📸</div>
+            <h3>Entrá a la cabina</h3>
+            <p>Ingresá con amigos y preparate para la foto.</p>
+          </div>
+
+          <div
+            style={{
+              padding: "25px",
+              borderRadius: "12px",
+              background: "#f5f5f5"
+            }}
+          >
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>😄</div>
+            <h3>Posá y divertite</h3>
+            <p>Usá el cotillón y dejá que la cabina capture el momento.</p>
+          </div>
+
+          <div
+            style={{
+              padding: "25px",
+              borderRadius: "12px",
+              background: "#f5f5f5"
+            }}
+          >
+            <div style={{ fontSize: "40px", marginBottom: "10px" }}>🖨</div>
+            <h3>Recibí tu foto</h3>
+            <p>Las fotos se imprimen al instante para que te lleves el recuerdo.</p>
+          </div>
 
         </div>
 
-      </section>
+      </div>
 
-
-      {/* CTA */}
-      <section
-        style={{
-          padding: "100px 20px",
-          textAlign: "center"
-        }}
-      >
-
-        <h2 style={{ fontSize: "34px", marginBottom: "20px" }}>
-          ¿Querés la cabina en tu evento?
-        </h2>
-
-        <a
-          href="https://wa.me/5493446642745"
-          target="_blank"
-          style={{
-            display: "inline-block",
-            padding: "16px 30px",
-            background: "#25D366",
-            color: "white",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontSize: "18px"
-          }}
-        >
-          Consultar disponibilidad
-        </a>
-
-      </section>
-
-    </main>
+    </ServicePage>
   )
 }
