@@ -22,6 +22,26 @@ export default function Home() {
         `}
       </style>
 
+      <style>
+      {`
+      @keyframes pulseWhatsapp {
+         0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+         }
+         70% {
+           transform: scale(1.05);
+           box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+         }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+       }
+       `}
+      </style>
+      
+
       {/* HERO */}
       <section
         style={{
@@ -307,22 +327,36 @@ export default function Home() {
 
   
       {/* BOTÓN WHATSAPP FLOTANTE */}
-      <a
-        href="https://wa.me/5493446642745"
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          background: "#25D366",
-          color: "white",
-          padding: "15px 20px",
-          borderRadius: "50px",
-          textDecoration: "none",
-          fontWeight: "bold"
-        }}
-      >
-        WhatsApp
-      </a>
+    <a
+       href="https://wa.me/5493446642745"
+       target="_blank"
+       style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        width: "60px",
+        height: "60px",
+        background: "#25D366",
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        animation: "pulseWhatsapp 2.2s infinite",
+        zIndex: 999,
+        boxShadow: "0 6px 15px rgba(0,0,0,0.3)",
+        zIndex: 999
+      }}
+     >
+
+  <img
+    src="/whatsapp.svg"
+    style={{
+      width: "32px",
+      height: "32px"
+    }}
+  />
+
+</a>
 
     </main>
   );
