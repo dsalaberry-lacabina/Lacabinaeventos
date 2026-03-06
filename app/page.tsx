@@ -344,7 +344,6 @@ export default function Home() {
         animation: "pulseWhatsapp 2.2s infinite",
         zIndex: 999,
         boxShadow: "0 6px 15px rgba(0,0,0,0.3)",
-        zIndex: 999
       }}
      >
 
