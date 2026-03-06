@@ -171,12 +171,12 @@ export default function Home() {
           }}
          >
 
-          <GalleryImage src="/galeria/foto1.jpg" />
-          <GalleryImage src="/galeria/foto2.jpg" />
-          <GalleryImage src="/galeria/foto3.jpg" />
-          <GalleryImage src="/galeria/foto4.jpg" />
-          <GalleryImage src="/galeria/foto5.jpg" />
-          <GalleryImage src="/galeria/foto6.jpg" />
+          <GalleryImage src="/galeria/foto1.jpg" index={0} />
+          <GalleryImage src="/galeria/foto2.jpg" index={1} />
+          <GalleryImage src="/galeria/foto3.jpg" index={2} />
+          <GalleryImage src="/galeria/foto4.jpg" index={3} />
+          <GalleryImage src="/galeria/foto5.jpg" index={4} />
+          <GalleryImage src="/galeria/foto6.jpg" index={5} />
 
         </div>
       </section>
@@ -245,20 +245,67 @@ export default function Home() {
           </button>
         </a>
       </section>
-
-
-      {/* FOOTER */}
-      <footer
+ 
+      {/* INSTAGRAM */}
+      <section
         style={{
-          padding: "30px",
-          textAlign: "center",
-          background: "#f5f5f5"
-        }}
-      >
-        <p>@la.cabina.eventos</p>
-      </footer>
+        padding: "80px 20px",
+        textAlign: "center"
+      }}
+     >
+
+      <h2 style={{ fontSize: "34px", marginBottom: "10px" }}>
+        Seguinos en Instagram
+      </h2>
+
+      <a
+        href="https://instagram.com/la.cabina.eventos"
+        target="_blank"
+        style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "10px",
+        fontSize: "18px",
+        textDecoration: "none",
+        marginBottom: "40px"
+      }}
+    >
+      📸 @la.cabina.eventos
+    </a>
+
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(6, 1fr)",
+        gap: "10px",
+        maxWidth: "1100px",
+        margin: "0 auto"
+      }}
+    >
+
+    <img src="/instagram/1.jpg" style={{ width: "100%" }} />
+    <img src="/instagram/2.jpg" style={{ width: "100%" }} />
+    <img src="/instagram/3.jpg" style={{ width: "100%" }} />
+    <img src="/instagram/4.jpg" style={{ width: "100%" }} />
+    <img src="/instagram/5.jpg" style={{ width: "100%" }} />
+    <img src="/instagram/6.jpg" style={{ width: "100%" }} />
+
+    </div>
+
+</section>
 
 
+{/* FOOTER */}
+<footer
+  style={{
+    padding: "30px",
+    textAlign: "center",
+    background: "#f5f5f5"
+  }}
+>  
+</footer>
+
+  
       {/* BOTÓN WHATSAPP FLOTANTE */}
       <a
         href="https://wa.me/5493446642745"
@@ -497,30 +544,50 @@ function Combo({ title, text }: { title: string; text: string }) {
   )
 }
 
-function GalleryImage({ src }: { src: string }) {
+function GalleryImage({ src, index }: { src: string; index: number }) {
+
+  const images = [
+    "/galeria/foto1.jpg",
+    "/galeria/foto2.jpg",
+    "/galeria/foto3.jpg",
+    "/galeria/foto4.jpg",
+    "/galeria/foto5.jpg",
+    "/galeria/foto6.jpg"
+    
+  ]
 
   const [open, setOpen] = useState(false)
+  const [current, setCurrent] = useState(index)
+
+  const next = () => {
+    setCurrent((current + 1) % images.length)
+  }
+
+  const prev = () => {
+    setCurrent((current - 1 + images.length) % images.length)
+  }
 
   return (
     <>
       {/* MINIATURA */}
       <img
         src={src}
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setCurrent(index)
+          setOpen(true)
+        }}
         style={{
           width: "100%",
           height: "140px",
           objectFit: "cover",
           borderRadius: "8px",
-          cursor: "pointer",
-          transition: "transform 0.2s ease"
+          cursor: "pointer"
         }}
       />
 
-      {/* FOTO GRANDE */}
+      {/* VISOR */}
       {open && (
         <div
-          onClick={() => setOpen(false)}
           style={{
             position: "fixed",
             top: 0,
@@ -534,14 +601,62 @@ function GalleryImage({ src }: { src: string }) {
             zIndex: 9999
           }}
         >
+
+          {/* BOTON ANTERIOR */}
+          <div
+            onClick={prev}
+            style={{
+              position: "absolute",
+              left: "30px",
+              fontSize: "40px",
+              color: "white",
+              cursor: "pointer",
+              userSelect: "none"
+            }}
+          >
+            ‹
+          </div>
+
+          {/* FOTO */}
           <img
-            src={src}
+            src={images[current]}
             style={{
               maxWidth: "92%",
               maxHeight: "92%",
               borderRadius: "10px"
             }}
           />
+
+          {/* BOTON SIGUIENTE */}
+          <div
+            onClick={next}
+            style={{
+              position: "absolute",
+              right: "30px",
+              fontSize: "40px",
+              color: "white",
+              cursor: "pointer",
+              userSelect: "none"
+            }}
+          >
+            ›
+          </div>
+
+          {/* CERRAR */}
+          <div
+            onClick={() => setOpen(false)}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "30px",
+              fontSize: "30px",
+              color: "white",
+              cursor: "pointer"
+            }}
+          >
+            ✕
+          </div>
+
         </div>
       )}
     </>
