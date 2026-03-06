@@ -125,35 +125,35 @@ export default function Home() {
             title="Cabina de Fotos"
             text="Fotos ilimitadas, impresiones instantáneas y cotillón premium."
             link="/cabina"
-            icon="📸"
+            image="/servicios/cabina.jpg"
           />
 
           <Service
             title="Cabina Glam"
             text="Fotos elegantes en blanco y negro con iluminación profesional."
             link="/cabina-glam"
-            icon="✨"
+            image="/servicios/glam.jpg"
           />
 
           <Service
             title="Plataforma 360°"
             text="Videos increíbles en cámara lenta para compartir en redes."
             link="/plataforma-360"
-            icon="🎥"
+            image="/servicios/plataforma360.jpg"
           />
 
           <Service
             title="Memory Phone"
             text="Mensajes de audio de tus invitados como recuerdo del evento."
             link="/memory-phone"
-            icon="☎️"
+            image="/servicios/memoryphone.jpg"
           />
 
           <Service
             title="Fotoimanes"
             text="Fotos impresas convertidas en imanes para llevar a casa."
             link="/fotoimanes"
-            icon="🧲"
+            image="/servicios/fotoimanes.jpg"
           />
 
         </div>
@@ -283,46 +283,78 @@ export default function Home() {
   );
 }
 
-
-function Service({ title, text, link, icon }: { title: string; text: string; link: string; icon: string }) {
+function Service({
+  title,
+  link,
+  image
+}: {
+  title: string;
+  link: string;
+  image: string;
+}) {
   const [hover, setHover] = useState(false);
 
   return (
-    <Link href={link} style={{ textDecoration: "none", color: "inherit" }}>
+    <Link href={link} style={{ textDecoration: "none", color: "white" }}>
       <div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         style={{
-          padding: "30px",
+          position: "relative",
+          height: "260px",
           borderRadius: "14px",
-          background: "white",
+          overflow: "hidden",
           cursor: "pointer",
-          transition: "all 0.25s ease",
-          transform: hover ? "translateY(-6px)" : "translateY(0)",
+          transform: hover ? "scale(1.03)" : "scale(1)",
+          transition: "all 0.3s ease",
           boxShadow: hover
-            ? "0 20px 40px rgba(0,0,0,0.15)"
-            : "0 5px 15px rgba(0,0,0,0.06)",
-          textAlign: "center"
+            ? "0 20px 40px rgba(0,0,0,0.25)"
+            : "0 5px 15px rgba(0,0,0,0.08)"
         }}
       >
-        <div style={{ fontSize: "42px", marginBottom: "10px" }}>
-          {icon}
-        </div>
+        {/* FOTO */}
+        <img
+          src={image}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover"
+          }}
+        />
 
-        <h3 style={{ marginBottom: "10px" }}>{title}</h3>
+        {/* OVERLAY */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7))"
+          }}
+        />
 
-        <p style={{ fontSize: "15px", opacity: 0.8 }}>
-          {text}
-        </p>
+        {/* TEXTO */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "20px",
+            left: "20px"
+          }}
+        >
+          <h3 style={{ fontSize: "22px", marginBottom: "5px" }}>
+            {title}
+          </h3>
 
-        <div style={{ marginTop: "15px", fontWeight: "bold" }}>
-          Ver detalles →
+          <span style={{ fontWeight: "bold", fontSize: "14px" }}>
+            Ver detalles →
+          </span>
         </div>
       </div>
     </Link>
   );
 }
-
 
 function Combo({ title, text }: { title: string; text: string }) {
   return (
