@@ -1,3 +1,5 @@
+"use client";
+
 import ServicePage from "../../components/ServicePage"
 
 export default function CabinaPage() {
@@ -11,29 +13,53 @@ export default function CabinaPage() {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1.3fr",
-          gap: "100px",
+          gap: "80px",
           alignItems: "start",
-          marginTop: "50px"
+          marginTop: "0px"
         }}
       >
 
-        {/* FOTO */}
-        <img
-          src="/galeria/foto1.jpg"
+       {/* FOTOS */}
+       <div
           style={{
-            width: "100%",
-            borderRadius: "12px"
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px"
           }}
+         >
+
+         <img
+           src="/servicios/cabina1.jpg"
+             style={{
+             width: "100%",
+             borderRadius: "12px",
+             transition: "transform 0.4s ease"
+           }}
+             onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
         />
 
-        {/* TEXTO */}
-        <div>
+         <img
+            src="/servicios/cabina2.jpg"
+              style={{
+              width: "100%",
+              borderRadius: "12px",
+              transition: "transform 0.4s ease"
+            }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+         />
 
-          <h2 style={{ marginBottom: "20px" }}>
+</div>
+        
+        {/* TEXTO */}
+        <div style={{ marginTop: "30px" }}>
+
+          <h2 style={{ marginBottom: "30px" }}>
             La experiencia de la cabina
           </h2>
 
-          <p style={{ fontSize: "18px", lineHeight: "1.6" }}>
+          <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
             Nuestra cabina de fotos es uno de los servicios más elegidos para
             cumpleaños de 15, bodas y eventos sociales. Los invitados pueden
             sacarse fotos divertidas, recibir impresiones al instante y llevarse
@@ -41,16 +67,17 @@ export default function CabinaPage() {
           </p>
 
           {/* QUE INCLUYE */}
-          <div style={{ marginTop: "50px" }}>
+          <div style={{ marginTop: "140px" }}>
 
             <h2>¿Qué incluye el servicio?</h2>
 
-            <div style={{ marginTop: "20px", fontSize: "18px", lineHeight: "1.8" }}>
+            <div style={{ marginTop: "40px", fontSize: "16px", lineHeight: "1.4" }}>
 
               <p>📸 Fotos ilimitadas durante el evento con camara profesional Nikon</p>
               <p>🖨 Impresiones instantáneas de calidad Kodak</p>
               <p>🎭 Cotillón premium para las fotos</p>
               <p>👨‍💼 Asistente durante todo el servicio</p>
+              <p>📱 Servicio "Easy Share" Podes llevarte la foto digital en el momento!</p>
               <p>📂 Galería digital con todas las fotos</p>
 
             </div>
@@ -87,7 +114,7 @@ export default function CabinaPage() {
           >
             <div style={{ fontSize: "40px", marginBottom: "10px" }}>📸</div>
             <h3>Entrá a la cabina</h3>
-            <p>Ingresá con amigos y preparate para la foto.</p>
+            <p>Ingresá con amigos y presioná el boton rojo. 🔴</p>
           </div>
 
           <div
@@ -99,7 +126,7 @@ export default function CabinaPage() {
           >
             <div style={{ fontSize: "40px", marginBottom: "10px" }}>😄</div>
             <h3>Posá y divertite</h3>
-            <p>Usá el cotillón y dejá que la cabina capture el momento.</p>
+            <p>Usá el cotillón y dejá que la cabina capture las poses.</p>
           </div>
 
           <div
@@ -111,7 +138,7 @@ export default function CabinaPage() {
           >
             <div style={{ fontSize: "40px", marginBottom: "10px" }}>🖨</div>
             <h3>Recibí tu foto</h3>
-            <p>Las fotos se imprimen al instante para que te lleves el recuerdo.</p>
+            <p>Las tiras de fotos se imprimen al instante para que te lleves el recuerdo.</p>
           </div>
 
         </div>

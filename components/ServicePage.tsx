@@ -36,7 +36,7 @@ export default function ServicePage({
       {/* HERO */}
       <section
          style={{
-            padding: "100px 20px",
+            padding: "0px 0px 30px 0px",
             background: "#111",
             color: "white"
           }}
@@ -44,12 +44,12 @@ export default function ServicePage({
 
       <div
   style={{
-    maxWidth: "1100px",
+    maxWidth: "900px",
     margin: "0 auto",
     display: "flex",
     alignItems: "center",
     gap: "30px",
-    paddingLeft: "40px"
+    paddingLeft: "50px"
   }}
  >
 
@@ -57,7 +57,7 @@ export default function ServicePage({
   <img
      src="/servicios/cabina-logo.png"
      style={{
-     width: "300px"
+     width: "350px"
     }}
   />
 
@@ -72,7 +72,7 @@ export default function ServicePage({
 
   {/* TEXTO */}
   <div style={{ textAlign: "left" }}>
-    <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
+    <h1 style={{ fontSize: "40px", marginBottom: "10px" }}>
       {title}
     </h1>
 
@@ -88,7 +88,7 @@ export default function ServicePage({
       {/* FOTO */}
       <section
         style={{
-          padding: "60px 20px",
+          padding: "0px 0px",
           display: "flex",
           justifyContent: "center"
         }}
@@ -118,11 +118,11 @@ export default function ServicePage({
       {/* CTA */}
       <section
         style={{
-          padding: "100px 20px",
+          padding: "10px 10px",
           textAlign: "center"
         }}
       >
-        <h2 style={{ fontSize: "34px", marginBottom: "20px" }}>
+        <h2 style={{ fontSize: "34px", marginBottom: "40px" }}>
           Consultá disponibilidad para tu evento
         </h2>
 
