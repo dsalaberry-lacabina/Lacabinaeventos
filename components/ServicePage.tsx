@@ -1,7 +1,7 @@
 type Props = {
   title: string
   subtitle: string
-  image: string
+  image?: string
   children?: React.ReactNode
 }
 
