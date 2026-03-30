@@ -21,7 +21,7 @@ export default function Plataforma360Page() {
         {/* VIDEO */}
         <div style={{ borderRadius: "12px", overflow: "hidden" }}>
           <video
-            src="/servicios/360.mp4"
+            src="/servicios/plataforma360.mp4"
             autoPlay
             muted
             loop
