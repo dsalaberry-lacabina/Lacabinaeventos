@@ -5,6 +5,9 @@ type Props = {
   children?: React.ReactNode
 }
 
+"use client";
+import Link from "next/link";
+
 export default function ServicePage({
   title,
   subtitle,
@@ -15,22 +18,81 @@ export default function ServicePage({
     <main style={{ fontFamily: "Arial, sans-serif" }}>
 
       <style>
-      {`
-      @keyframes pulseWhatsapp {
-         0% {
-           transform: scale(1);
-           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-         }
-         70% {
-           transform: scale(1.05);
-           box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
-         } 
-         100% {
-           transform: scale(1);
-           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-         }
-       }
-       `}
+     <style>
+{`
+@keyframes pulseWhatsapp {
+   0% {
+     transform: scale(1);
+     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+   }
+   70% {
+     transform: scale(1.05);
+     box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+   } 
+   100% {
+     transform: scale(1);
+     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+   }
+}
+
+/* 👇 PEGÁS TODO ESTO ACÁ 👇 */
+
+.hero-header {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 40px;
+}
+
+.hero-logo {
+  width: 300px;
+  max-width: 100%;
+}
+
+.hero-line {
+  width: 2px;
+  height: 70px;
+  background: rgba(255,255,255,0.4);
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .hero-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero-logo {
+    width: 200px;
+  }
+
+  .hero-line {
+    display: none;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+}
+`}
+</style>
       </style>
 
       {/* HERO */}
@@ -42,33 +104,19 @@ export default function ServicePage({
           }}
       >
 
-      <div
-  style={{
-    maxWidth: "900px",
-    margin: "0 auto",
-    display: "flex",
-    alignItems: "center",
-    gap: "30px",
-    paddingLeft: "50px"
-  }}
- >
+  <div className="hero-header">
 
   {/* LOGO */}
+  <Link href="/" style={{ display: "block" }}>
   <img
-     src="/servicios/cabina-logo.png"
-     style={{
-     width: "350px"
-    }}
+    src="/servicios/cabina-logo.png"
+    alt="La Cabina"
+    className="hero-logo"
   />
+  </Link>
 
   {/* LINEA */}
-  <div
-    style={{
-      width: "2px",
-      height: "70px",
-      background: "rgba(255,255,255,0.4)"
-    }}
-  />
+  <div className="hero-line" />
 
   {/* TEXTO */}
   <div style={{ textAlign: "left" }}>
