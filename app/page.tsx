@@ -81,53 +81,101 @@ export default function Home() {
             position: "absolute",
             width: "100%",
             height: "100%",
-            background: "rgba(0,0,0,0.55)",
+            background: "rgba(0,0,0,0.6)",
             top: 0,
             left: 0,
             zIndex: -1
           }}
         />
 
-        <div>
+        <div style={{ maxWidth: "800px", padding: "0 20px" }}>
 
+          {/* LOGO */}
           <img
             src="/logo.png"
             style={{
               width: "100%",
-              maxWidth: "600px",
-              marginBottom: "1px",
+              maxWidth: "500px",
+              marginBottom: "20px",
               opacity: 0,
               animation: "fadeLogo 1.5s ease forwards"
             }}
           />
 
-          <p style={{ fontSize: "20px" }}>
-            Cabina de Fotos · Plataforma 360 · Memory Phone · Fotoimanes
+          {/* TITULO VENDEDOR */}
+          <h1 style={{ fontSize: "34px", marginBottom: "15px" }}>
+            La diversión que transforma tu evento en recuerdos inolvidables
+          </h1>
+
+          {/* SUBTITULO */}
+          <p style={{ fontSize: "18px", marginBottom: "25px", opacity: 0.9 }}>
+            Cabina de fotos, plataforma 360 y experiencias únicas para XV, bodas y eventos
           </p>
 
-          <a href="#servicios">
-            <button
-              style={{
-                marginTop: "25px",
-                padding: "16px 34px",
-                fontSize: "18px",
-                borderRadius: "10px",
-                border: "none",
-                background: "white",
-                fontWeight: "600",
-                cursor: "pointer"
-              }}
-            >
-              Ver servicios
-            </button>
-          </a>
+          {/* BOTONES */}
+          <div style={{ display: "flex", gap: "15px", justifyContent: "center", flexWrap: "wrap" }}>
+
+            {/* WHATSAPP (PRINCIPAL) */}
+            <a href="https://wa.me/5493446642745" target="_blank">
+              <button
+                style={{
+                  padding: "16px 28px",
+                  fontSize: "18px",
+                  borderRadius: "10px",
+                  border: "none",
+                  background: "#25D366",
+                  color: "white",
+                  fontWeight: "600",
+                  cursor: "pointer"
+                }}
+              >
+                Consultar disponibilidad
+              </button>
+            </a>
+
+            {/* SERVICIOS (SECUNDARIO) */}
+            <a href="#servicios">
+              <button
+                style={{
+                  padding: "16px 28px",
+                  fontSize: "18px",
+                  borderRadius: "10px",
+                  border: "1px solid white",
+                  background: "transparent",
+                  color: "white",
+                  fontWeight: "600",
+                  cursor: "pointer"
+                }}
+              >
+                Ver servicios
+              </button>
+            </a>
+
+          </div>
 
         </div>
       </section>
 
+      <div
+        style={{
+          maxWidth: "900px",
+          margin: "0 auto",
+          textAlign: "center",
+          padding: "0 20px",
+          marginBottom: "0px"
+                }}
+        >
+          <h2 style={{ fontSize: "36px", marginBottom: "10px" }}>
+            Experiencias para tu evento
+          </h2>
+
+          <p style={{ opacity: 0.7 }}>
+            Elegí tu servicio o combiná opciones para una experiencia completa
+          </p>
+        </div>
 
       {/* SERVICIOS */}
-      <section id="servicios" style={{ padding: "80px 20px", textAlign: "center" }}>
+      <section id="servicios" style={{ padding: "40px 20px", textAlign: "center" }}>
         <h2 style={{ fontSize: "36px" }}>
           Nuestros Servicios
         </h2>
