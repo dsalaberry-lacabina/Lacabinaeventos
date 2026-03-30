@@ -56,8 +56,7 @@ export default function MemoryPhonePage() {
           {/* COMO FUNCIONA */}
           <h3 style={{ marginBottom: "10px" }}>¿Cómo funciona?</h3>
 
-          <ul style={{ marginBottom: "30px", lineHeight: "28px", listStyle: "none", marginBottom: "8px", padding: 0  }}>
-              
+          <ul style={{ marginBottom: "30px", lineHeight: "28px", listStyle: "none", padding: 0  }}>
             <li>📞 Levantás el teléfono</li>
             <li>🎧 Escuchás un mensaje de bienvenida personalizado</li>
             <li>🎤 Después del tono, dejás tu mensaje</li>
@@ -67,7 +66,7 @@ export default function MemoryPhonePage() {
           {/* INCLUYE */}
           <h3 style={{ marginBottom: "10px" }}>¿Qué incluye?</h3>
 
-          <ul style={{ marginBottom: "30px", lineHeight: "28px", listStyle: "none", marginBottom: "8px", padding: 0  }}>
+          <ul style={{ marginBottom: "30px", lineHeight: "28px", listStyle: "none", padding: 0  }}>
             <li>☎️ Teléfono grabador con memoria ilimitada</li>
             <li>👨‍💼 Asistente durante el evento</li>
             <li>🌸 Mesa + cuadro instructivo + Cartel Neon "Deja tu mensaje"</li>
