@@ -20,210 +20,316 @@ export default function ServicePage({
       <style>
         {`
         @keyframes pulseWhatsapp {
-          0% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-          }
-          70% {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
-          } 
-          100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-          }
+          0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+          70% { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+          100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
 
-        .hero-header {
-          max-width: 900px;
-          margin: 0 auto;
-          display: flex;
-          align-items: center;
-          gap: 30px;
-          padding: 20px 40px;
-        }
-
-        .hero-logo {
-          width: 300px;
-          max-width: 100%;
-        }
-
-        .hero-line {
-          width: 2px;
-          height: 70px;
-          background: rgba(255,255,255,0.4);
-        }
-
-        .hero-text {
-          text-align: left;
-        }
-
-        .hero-text h1 {
-          font-size: 40px;
-          margin-bottom: 10px;
-        }
-
-        .hero-text p {
-          font-size: 20px;
-          opacity: 0.8;
-        }
-
-        .service-image {
-          display: flex;
-          justify-content: center;
-        }
-
-        .service-img {
-          max-width: 900px;
-          width: 100%;
-          border-radius: 12px;
-        }
-
-        .service-content {
-          padding: 60px 20px;
-          max-width: 900px;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-        /* 📱 MOBILE */
-        @media (max-width: 768px) {
-          .hero-header {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
+       /* HERO */
+          .hero {
+            background: #111;
+            padding: 50px 20px;
           }
 
+          .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: center;
+          }
+
+          .intro-text-block {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 20px 20px; /* 👈 más aire abajo */
+          }
+
+          .gallery-block {
+            padding: 20px 20px 60px; /* 👈 separa de arriba */
+          }
+
+          /* LOGO */
           .hero-logo {
-            width: 200px;
+            width: 220px;
           }
 
-          .hero-line {
-            display: none;
-          }
-
-          .hero-text {
-            text-align: center;
-          }
-
+          /* TEXTO */
           .hero-text h1 {
-            font-size: 28px;
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: white;
           }
 
           .hero-text p {
-            font-size: 16px;
+            font-size: 18px;
+            opacity: 0.8;
+            color: white;
           }
+      
 
-          .service-content {
-            padding: 40px 20px;
-          }
-
-          .service-img {
-            border-radius: 0;
-          }
+        /* CONTENT */
+        .content {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 40px 20px;
         }
+
+        /* CTA */
+        .cta {
+          text-align: center;
+          padding: 60px 20px;
+        }
+
+        .cta h2 {
+          font-size: 32px;
+          margin-bottom: 25px;
+        }
+
+        .cta-btn {
+          display: inline-block;
+          padding: 16px 30px;
+          background: #25D366;
+          color: white;
+          border-radius: 8px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 60px;
+          height: 60px;
+          background: #25D366;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          animation: pulseWhatsapp 2.2s infinite;
+          box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+          z-index: 999;
+        }
+
+        /* INCLUDES */
+          .includes {
+            padding: 80px 20px;
+            background: #fafafa;
+          }
+
+          .includes-container {
+            max-width: 1100px;
+            margin: 0 auto;
+          }
+
+          .includes h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 50px;
+          }
+
+          /* GRID */
+          .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+          }
+
+          /* CARD */
+          .card {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+          }
+
+          .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+          }
+
+          .card .icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+          }
+
+          .card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+
+          .card p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.4;
+          }
+
+        /* MOBILE */
+        /* 📱 MOBILE */
+          @media (max-width: 768px) {
+
+            .hero-inner {
+              grid-template-columns: 1fr;
+              text-align: center;
+              gap: 20px;
+            }
+
+            .hero-logo {
+              margin: 0 auto;
+            }
+
+            .intro-text-block {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 20px 20px; /* 👈 más aire abajo */
+          }
+
+          .gallery-block {
+            padding: 20px 20px 10px; /* 👈 separa de arriba */
+          }
+
+            .hero-text h1 {
+              font-size: 28px;
+              color: white;
+            }
+
+            .hero-text p {
+              font-size: 15px;
+              color: white;
+            }
+          }
+
+          .includes {
+            padding: 50px 20px;
+          }
+
+          .includes h2 {
+            font-size: 26px;
+            text-align: left;
+          }
+
+          .includes-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+          }
+
+          .card {
+            padding: 18px;
+          }
+            }
+
+          .how {
+            padding: 80px 20px;
+          }
+
+          .how-container {
+            max-width: 1100px;
+            margin: 0 auto;
+          }
+
+          .how h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+          }
+
+          .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+          }
+
+          .how-card {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+          }
+
+          .how-card .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+          }
+
+          @media (max-width: 768px) {
+            .how-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .how h2 {
+              font-size: 24px;
+              text-align: left;
+            }
+          }
+
+        .gallery-grid img {
+          width: 100%;
+          height: 500px; /* 🔥 clave */
+          object-fit: cover; /* 🔥 recorta sin deformar */
+          border-radius: 12px;
+        }
+
         `}
       </style>
 
       {/* HERO */}
-      <section
-        style={{
-          padding: "0px 0px 30px 0px",
-          background: "#111",
-          color: "white"
-        }}
-      >
-        <div className="hero-header">
+      <section className="hero">
+        <div className="hero-inner">
 
-          {/* LOGO */}
-          <Link href="/" style={{ display: "block" }}>
-            <img
-              src="/servicios/cabina-logo.png"
-              alt="La Cabina"
-              className="hero-logo"
-              style={{ cursor: "pointer" }}
-            />
-          </Link>
+        <Link href="/">
+        <img
+          src="/servicios/cabina-logo.png"
+          alt="La Cabina"
+          className="hero-logo"
+        />
+        </Link>
 
-          {/* LINEA */}
-          <div className="hero-line" />
-
-          {/* TEXTO */}
           <div className="hero-text">
             <h1>{title}</h1>
             <p>{subtitle}</p>
           </div>
 
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* FOTO */}
+      {/* IMAGE */}
       {image && (
-        <section className="service-image">
-          <img src={image} className="service-img" />
+        <section className="image-section">
+          <div className="image-container">
+            <img src={image} className="service-img" />
+          </div>
         </section>
       )}
 
-      {/* CONTENIDO */}
-      <section className="service-content">
+      {/* CONTENT */}
+      <section className="content">
         {children}
       </section>
 
       {/* CTA */}
-      <section
-        style={{
-          padding: "10px 10px",
-          textAlign: "center"
-        }}
-      >
-        <h2 style={{ fontSize: "34px", marginBottom: "40px" }}>
-          Consultá disponibilidad para tu evento
-        </h2>
+      <section className="cta">
+        <h2>Consultá disponibilidad para tu evento</h2>
 
         <a
           href="https://wa.me/5493446642745"
           target="_blank"
-          style={{
-            display: "inline-block",
-            padding: "16px 30px",
-            background: "#25D366",
-            color: "white",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontSize: "18px"
-          }}
+          className="cta-btn"
         >
           Consultar por WhatsApp
         </a>
       </section>
 
-      {/* WHATSAPP FLOAT */}
+      {/* FLOAT */}
       <a
         href="https://wa.me/5493446642745"
         target="_blank"
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          width: "60px",
-          height: "60px",
-          background: "#25D366",
-          borderRadius: "50%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          animation: "pulseWhatsapp 2.2s infinite",
-          boxShadow: "0 6px 15px rgba(0,0,0,0.3)",
-          zIndex: 999
-        }}
+        className="whatsapp-float"
       >
-        <img
-          src="/whatsapp.svg"
-          style={{
-            width: "30px",
-            height: "30px"
-          }}
-        />
+        <img src="/whatsapp.svg" width={30} />
       </a>
 
     </main>
