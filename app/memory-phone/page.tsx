@@ -1,6 +1,7 @@
 "use client";
 
 import ServicePage from "../../components/ServicePage";
+import AudioPro from "../../components/AudioPro";
 
 export default function MemoryPhonePage() {
   return (
@@ -84,30 +85,26 @@ export default function MemoryPhonePage() {
           </section>
 
           <section className="audio-demo">
-            <div className="audio-container">
+              <div className="audio-container">
 
-              <h2>Escuchá lo que queda para siempre</h2>
+                <h2>Escuchá lo que queda para siempre</h2>
 
-              <p>
-                Así suenan los mensajes que dejan los invitados durante el evento.
-              </p>
+                <div className="audio-list">
 
-              <div className="audio-list">
+                  <AudioPro
+                    title="😂 Mensaje divertido"
+                    src="/audios/demo1.mp3"
+                  />
 
-                <div className="audio-card">
-                  <p className="audio-title">😂 Mensaje divertido</p>
-                  <audio controls src="/audios/demo1.mp3" />
-                </div>
+                  <AudioPro
+                    title="❤️ Mensaje emotivo"
+                    src="/audios/demo2.mp3"
+                  />
 
-                <div className="audio-card">
-                  <p className="audio-title">❤️ Mensaje emotivo</p>
-                  <audio controls src="/audios/demo2.mp3" />
                 </div>
 
               </div>
-
-            </div>
-          </section>
+            </section>
 
           <section className="portal">
             <div className="portal-container">

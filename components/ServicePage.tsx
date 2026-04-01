@@ -169,9 +169,9 @@ export default function ServicePage({
           }
 
           .portal {
-            padding: 20px 20px;
+            padding: 40px 20px;
             text-align: center;
-            background: #111;
+            background: #0d0d0d;
             color: white;
           }
 
@@ -208,7 +208,7 @@ export default function ServicePage({
 
         /* SECCION */
           .audio-demo {
-            padding: 80px 20px;
+            padding: 40px 20px;
             background: #0d0d0d;
             color: white;
             text-align: center;
@@ -239,7 +239,7 @@ export default function ServicePage({
           /* CARD */
           .audio-card {
             background: #1a1a1a;
-            padding: 18px;
+            padding: 12px;
             border-radius: 12px;
             text-align: left;
             transition: 0.3s;
@@ -260,6 +260,71 @@ export default function ServicePage({
           .audio-card audio {
             width: 100%;
             filter: invert(1) grayscale(1); /* 🔥 estilo oscuro */
+          }
+
+
+          .audio-pro {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: #1a1a1a;
+            padding: 12px;
+            border-radius: 12px;
+          }
+
+          .play-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: #25D366;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+          }
+
+          .audio-content {
+            flex: 1;
+          }
+
+          .audio-title {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: white;
+          }
+
+          .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #333;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+          }
+
+          .progress {
+            height: 100%;
+            background: #25D366;
+          }
+
+        .time {
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          color: #aaa;
+          margin-top: 5px;
+        }
+
+        .how {
+            padding: 40px 20px;
+          }
+
+          .audio-demo {
+            padding: 40px 20px; /* 👈 más aire */
+          }
+
+          .portal {
+            padding: 40px 20px;
           }
 
         /* MOBILE */
