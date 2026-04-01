@@ -168,6 +168,100 @@ export default function ServicePage({
             line-height: 1.4;
           }
 
+          .portal {
+            padding: 20px 20px;
+            text-align: center;
+            background: #111;
+            color: white;
+          }
+
+          .portal-container {
+            max-width: 700px;
+            margin: 0 auto;
+          }
+
+          .portal h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+          }
+
+          .portal p {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 25px;
+          }
+
+          .portal-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: white;
+            color: black;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+          }
+
+          .portal-btn:hover {
+            transform: scale(1.05);
+          }
+
+        /* SECCION */
+          .audio-demo {
+            padding: 80px 20px;
+            background: #0d0d0d;
+            color: white;
+            text-align: center;
+          }
+
+          .audio-container {
+            max-width: 600px;
+            margin: 0 auto;
+          }
+
+          .audio-demo h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+          }
+
+          .audio-demo p {
+            opacity: 0.7;
+            margin-bottom: 30px;
+          }
+
+          /* LISTA */
+          .audio-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          /* CARD */
+          .audio-card {
+            background: #1a1a1a;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: left;
+            transition: 0.3s;
+          }
+
+          .audio-card:hover {
+            background: #222;
+          }
+
+          /* TITULO */
+          .audio-title {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+          }
+
+          /* PLAYER */
+          .audio-card audio {
+            width: 100%;
+            filter: invert(1) grayscale(1); /* 🔥 estilo oscuro */
+          }
+
         /* MOBILE */
         /* 📱 MOBILE */
           @media (max-width: 768px) {

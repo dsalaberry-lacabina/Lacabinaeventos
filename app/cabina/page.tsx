@@ -24,7 +24,6 @@ export default function CabinaPage() {
       {/* FOTOS */}
       <section className="gallery-block">
         <div className="gallery-grid">
-          <img src="/servicios/cabina.jpg" />
           <img src="/servicios/cabina1.jpg" />
           <img src="/servicios/cabina2.jpg" />
         </div>
@@ -41,7 +40,7 @@ export default function CabinaPage() {
               {
                 icon: "📸",
                 title: "Fotos ilimitadas",
-                text: "Capturas sin límite durante todo el evento con cámara profesional Nikon"
+                text: "Capturas sin límite durante el tiempo contratado con cámara profesional Nikon"
               },
               {
                 icon: "🖨️",
