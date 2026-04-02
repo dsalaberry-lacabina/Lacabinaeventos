@@ -11,7 +11,7 @@ export default function GlamPage() {
 
       {/* TEXTO */}
       <section className="intro-text-block">
-        <h2>La experiencia Glam</h2>
+        <h2>Fotos que parecen de revista</h2>
 
         <p>
           La Cabina Glam ofrece una experiencia elegante y moderna, con fotos en blanco y negro,

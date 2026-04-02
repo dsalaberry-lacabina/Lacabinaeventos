@@ -11,7 +11,7 @@ export default function CabinaPage() {
 
       {/* TEXTO */}
       <section className="intro-text-block">
-        <h2>La experiencia de la cabina</h2>
+        <h2>El momento más divertido de tu evento</h2>
 
         <p>
           Nuestra cabina de fotos es uno de los servicios más elegidos para

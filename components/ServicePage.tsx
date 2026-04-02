@@ -340,6 +340,62 @@ export default function ServicePage({
             border-radius: 12px;
           }
 
+           /* TESTIMONIOS */
+
+          .testimonials {
+            padding: 100px 20px;
+            background: #fafafa;
+            text-align: center;
+          }
+
+          .testimonials-container {
+            max-width: 1100px;
+            margin: 0 auto;
+          }
+
+          .testimonials h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+          }
+
+          /* GRID */
+          .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+          }
+
+          /* CARD */
+          .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            text-align: left;
+          }
+
+          .testimonial-card p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+          }
+
+          .testimonial-card span {
+            font-size: 13px;
+            opacity: 0.6;
+          }
+
+          /* MOBILE */
+          @media (max-width: 768px) {
+            .testimonials-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .testimonials h2 {
+              text-align: left;
+              font-size: 24px;
+            }
+          }
 
         /* MOBILE */
         /* 📱 MOBILE */
@@ -487,14 +543,13 @@ export default function ServicePage({
 
       {/* CTA */}
       <section className="cta">
-        <h2>Consultá disponibilidad para tu evento</h2>
+        <h2>Reservá tu fecha antes de que se agote</h2>
 
         <a
-          href="https://wa.me/5493446642745"
-          target="_blank"
+          href="https://wa.me/5493446642745?text=Hola!%20Quiero%20consultar%20disponibilidad"          target="_blank"
           className="cta-btn"
         >
-          Consultar por WhatsApp
+          Consultá disponibilidad
         </a>
       </section>
 

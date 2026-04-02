@@ -11,7 +11,7 @@ export default function MemoryPhonePage() {
     >
      
      <section className="intro-text-block">
-            <h2>Un recuerdo en forma de voz</h2>
+            <h2>Vas a poder escucharlo para siempre</h2>
             <p>
               Nuestro Memory Phone transforma los mensajes de tus invitados en recuerdos únicos.
               Como un libro de visitas, pero con audio. Emoción, risas y momentos que vas a poder

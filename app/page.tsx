@@ -175,7 +175,7 @@ export default function Home() {
         </div>
 
       {/* SERVICIOS */}
-      <section id="servicios" style={{ padding: "40px 20px", textAlign: "center" }}>
+      <section id="servicios" style={{ padding: "20px 20px", textAlign: "center" }}>
         <h2 style={{ fontSize: "36px" }}>
           Nuestros Servicios
         </h2>
@@ -223,37 +223,28 @@ export default function Home() {
         </div>
       </section>
 
+       {/* TESTIMONIOS */}
 
-      {/* GALERÍA */}
-      <section style={{ padding: "80px 20px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "36px" }}>
-           Momentos de nuestros eventos
-        </h2>
+          <section className="testimonials">
+          <div className="testimonials-container">
 
-        <div
-           style={{
-           display: "grid",
-           gridTemplateColumns: "repeat(6, 1fr)",
-           gap: "10px",
-           marginTop: "40px"
-          }}
-         >
+              <h2>Lo que dicen nuestros clientes</h2>
 
-          <GalleryImage src="/galeria/foto1.jpg" index={0} />
-          <GalleryImage src="/galeria/foto2.jpg" index={1} />
-          <GalleryImage src="/galeria/foto3.jpg" index={2} />
-          <GalleryImage src="/galeria/foto4.jpg" index={3} />
-          <GalleryImage src="/galeria/foto5.jpg" index={4} />
-          <GalleryImage src="/galeria/foto6.jpg" index={5} />
+             <div className="testimonials-grid">
 
-        </div>
-      </section>
+            <img src="/testimonios/1.jpg" />
+            <img src="/testimonios/2.jpg" />
+            <img src="/testimonios/3.jpg" />
+           
+    </div>
 
-
+  </div>
+</section>
+       
       {/* COMBOS */}
       <section
         style={{
-          padding: "80px 20px",
+          padding: "20px 20px",
           background: "#f5f5f5",
           textAlign: "center"
         }}
@@ -284,7 +275,7 @@ export default function Home() {
       {/* CTA FINAL */}
       <section
         style={{
-          padding: "100px 20px",
+          padding: "20px 20px",
           textAlign: "center",
           background: "#111",
           color: "white"
@@ -317,7 +308,7 @@ export default function Home() {
       {/* INSTAGRAM */}
       <section
         style={{
-        padding: "80px 20px",
+        padding: "20px 20px",
         textAlign: "center"
       }}
      >

@@ -11,7 +11,7 @@ export default function FotoimanesPage() {
 
       {/* TEXTO */}
       <section className="intro-text-block">
-        <h2>Un recuerdo que queda</h2>
+        <h2> Un recuerdo que no se guarda en el celular… se queda con vos.</h2>
 
         <p>
           Los fotoimanes son un recuerdo físico del evento que cada invitado puede llevarse.
