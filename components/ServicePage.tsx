@@ -36,14 +36,14 @@ export default function ServicePage({
             margin: 0 auto;
             display: grid;
             grid-template-columns: 280px 1fr;
-            gap: 40px;
+            gap: 200px;
             align-items: center;
           }
 
           .intro-text-block {
             max-width: 900px;
             margin: 0 auto;
-            padding: 10px 20px 20px; /* 👈 más aire abajo */
+            padding: 15px 20px 20px; /* 👈 más aire abajo */
           }
 
           .gallery-block {
@@ -52,7 +52,7 @@ export default function ServicePage({
 
           /* LOGO */
           .hero-logo {
-            width: 220px;
+            width: 380px;
           }
 
           /* TEXTO */
@@ -168,6 +168,8 @@ export default function ServicePage({
             line-height: 1.4;
           }
 
+          /* PORTAL MEMORY */
+
           .portal {
             padding: 40px 20px;
             text-align: center;
@@ -206,7 +208,7 @@ export default function ServicePage({
             transform: scale(1.05);
           }
 
-        /* SECCION */
+        /* AUDIO DEMO MEMORY */
           .audio-demo {
             padding: 40px 20px;
             background: #0d0d0d;
@@ -229,14 +231,14 @@ export default function ServicePage({
             margin-bottom: 30px;
           }
 
-          /* LISTA */
+          /* LISTA AUDIOS MEMORY */
           .audio-list {
             display: flex;
             flex-direction: column;
             gap: 20px;
           }
 
-          /* CARD */
+          /* AUDIO CARD MEMORY */
           .audio-card {
             background: #1a1a1a;
             padding: 12px;
@@ -249,19 +251,22 @@ export default function ServicePage({
             background: #222;
           }
 
-          /* TITULO */
+          /* TITULO AUDIO MEMORY */
           .audio-title {
             font-size: 14px;
             margin-bottom: 10px;
             opacity: 0.8;
           }
 
-          /* PLAYER */
+          /* PLAYER MEMORY */
           .audio-card audio {
             width: 100%;
             filter: invert(1) grayscale(1); /* 🔥 estilo oscuro */
           }
-
+ 
+          .audio-demo {
+            padding: 40px 20px; /* 👈 más aire */
+          }
 
           .audio-pro {
             display: flex;
@@ -307,29 +312,40 @@ export default function ServicePage({
             background: #25D366;
           }
 
-        .time {
-          display: flex;
-          justify-content: space-between;
-          font-size: 12px;
-          color: #aaa;
-          margin-top: 5px;
-        }
-
-        .how {
-            padding: 40px 20px;
+          .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 5px;
           }
 
-          .audio-demo {
-            padding: 40px 20px; /* 👈 más aire */
+          .how {
+              padding: 40px 20px;
+           }
+                  
+
+          /* VIDEO 360 */
+          .video-block {
+            padding: 20px;
           }
 
-          .portal {
-            padding: 40px 20px;
+          .video-container {
+            max-width: 900px;
+            margin: 0 auto;
           }
+
+          .video-container video {
+            width: 100%;
+            border-radius: 12px;
+          }
+
 
         /* MOBILE */
         /* 📱 MOBILE */
           @media (max-width: 768px) {
+
+          /* HERO */
 
             .hero-inner {
               grid-template-columns: 1fr;
@@ -347,9 +363,9 @@ export default function ServicePage({
             padding: 10px 20px 20px; /* 👈 más aire abajo */
           }
 
-          .gallery-block {
-            padding: 20px 20px 10px; /* 👈 separa de arriba */
-          }
+            .gallery-block {
+              padding: 20px 20px 10px; /* 👈 separa de arriba */
+            }
 
             .hero-text h1 {
               font-size: 28px;

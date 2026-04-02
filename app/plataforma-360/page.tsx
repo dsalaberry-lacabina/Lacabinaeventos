@@ -1,6 +1,6 @@
 "use client";
 
-import ServicePage from "../../components/ServicePage"
+import ServicePage from "../../components/ServicePage";
 
 export default function Plataforma360Page() {
   return (
@@ -9,121 +9,111 @@ export default function Plataforma360Page() {
       subtitle="Videos increíbles en cámara lenta para tu evento"
     >
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1.3fr",
-          gap: "80px",
-          alignItems: "start"
-        }}
-      >
+      {/* TEXTO */}
+      <section className="intro-text-block">
+        <h2>La experiencia 360</h2>
 
-        {/* VIDEO */}
-        <div style={{ borderRadius: "12px", overflow: "hidden" }}>
-          <video
+        <p>
+          La plataforma 360 captura videos espectaculares girando alrededor
+          de los invitados mientras posan y se divierten. El resultado son
+          clips dinámicos en cámara lenta que se vuelven virales en redes sociales.
+        </p>
+      </section>
+
+      {/* VIDEO */}
+      <section className="video-block">
+        <div className="video-container">
+           <video
             src="/servicios/plataforma360.mp4"
             autoPlay
             muted
             loop
-            style={{
-              width: "100%"
-            }}
+            playsInline
           />
         </div>
+      </section>
 
-        {/* TEXTO */}
-        <div style={{ marginTop: "30px" }}>
+      {/* COMO FUNCIONA */}
+      <section className="how">
+        <div className="how-container">
 
-          <h2 style={{ marginBottom: "30px" }}>
-            La experiencia 360
-          </h2>
+          <h2>¿Cómo funciona la Plataforma 360?</h2>
 
-          <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
-            La plataforma 360 captura videos espectaculares girando alrededor
-            de los invitados mientras posan y se divierten. El resultado son
-            clips dinámicos en cámara lenta que se vuelven virales en redes
-            sociales.
-          </p>
+          <div className="how-grid">
 
-          {/* QUE INCLUYE */}
-          <div style={{ marginTop: "120px" }}>
+            <div className="how-card">
+              <div className="icon">🎥</div>
+              <h3>Subite a la plataforma</h3>
+              <p>Parate en el centro y preparate para el video</p>
+            </div>
 
-            <h2>¿Qué incluye el servicio?</h2>
+            <div className="how-card">
+              <div className="icon">✨</div>
+              <h3>Posá y divertite</h3>
+              <p>La cámara gira a tu alrededor capturando el momento</p>
+            </div>
 
-            <div style={{ marginTop: "40px", fontSize: "16px", lineHeight: "1.4" }}>
-
-              <p>🎥 Plataforma 360° profesional</p>
-              <p>📹 Videos en cámara lenta</p>
-              <p>💡 Iluminación LED para mejor calidad</p>
-              <p>👨‍💼 Asistente durante todo el servicio</p>
-              <p>📱 Compartí tu video en el momento</p>
-              <p>📂 Entrega digital de todos los videos</p>
-
+            <div className="how-card">
+              <div className="icon">📱</div>
+              <h3>Compartí tu video</h3>
+              <p>Llevate el clip listo para subir a redes sociales</p>
             </div>
 
           </div>
 
         </div>
+      </section>
 
-      </div>
+      {/* INCLUDES (cards premium) */}
+      <section className="includes">
+        <div className="includes-container">
 
+          <h2>¿Qué incluye el servicio?</h2>
 
-      {/* COMO FUNCIONA */}
-      <div style={{ marginTop: "70px" }}>
-
-        <h2 style={{ marginBottom: "30px" }}>
-          ¿Cómo funciona la Plataforma 360?
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
-            gap: "30px",
-            marginTop: "30px"
-          }}
-        >
-
-          <div
-            style={{
-              padding: "25px",
-              borderRadius: "12px",
-              background: "#f5f5f5"
-            }}
-          >
-            <div style={{ fontSize: "40px", marginBottom: "10px" }}>🎥</div>
-            <h3>Subite a la plataforma</h3>
-            <p>Parate en el centro y preparate para el video.</p>
-          </div>
-
-          <div
-            style={{
-              padding: "25px",
-              borderRadius: "12px",
-              background: "#f5f5f5"
-            }}
-          >
-            <div style={{ fontSize: "40px", marginBottom: "10px" }}>✨</div>
-            <h3>Posá y divertite</h3>
-            <p>La cámara gira a tu alrededor capturando el momento.</p>
-          </div>
-
-          <div
-            style={{
-              padding: "25px",
-              borderRadius: "12px",
-              background: "#f5f5f5"
-            }}
-          >
-            <div style={{ fontSize: "40px", marginBottom: "10px" }}>📱</div>
-            <h3>Compartí tu video</h3>
-            <p>Llevate el clip listo para subir a redes sociales.</p>
+          <div className="includes-grid">
+            {[
+              {
+                icon: "🎥",
+                title: "Plataforma profesional",
+                text: "Equipo 360° de alta calidad"
+              },
+              {
+                icon: "✨",
+                title: "Slow motion + efectos",
+                text: "Videos dinámicos listos para redes"
+              },
+              {
+                icon: "💡",
+                title: "Iluminación LED",
+                text: "Mejor calidad visual en cada toma"
+              },
+              {
+                icon: "🧑‍💼",
+                title: "Asistente",
+                text: "Coordinación durante todo el evento"
+              },
+              {
+                icon: "📲",
+                title: "Entrega inmediata",
+                text: "Compartí tu video en el momento"
+              },
+              {
+                icon: "📂",
+                title: "Entrega digital",
+                text: "Todos los videos al finalizar"
+              }
+            ].map((item, i) => (
+              <div key={i} className="card">
+                <div className="icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
           </div>
 
         </div>
-
-      </div>
+      </section>
 
     </ServicePage>
-  )
+  );
 }

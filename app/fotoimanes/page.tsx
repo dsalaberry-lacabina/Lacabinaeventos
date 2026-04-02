@@ -6,104 +6,104 @@ export default function FotoimanesPage() {
   return (
     <ServicePage
       title="Fotoimanes"
-      subtitle="Un recuerdo listo para pegar y llevar"
+      subtitle="Un recuerdo único que tus invitados se llevan del evento"
     >
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1.3fr",
-          gap: "80px",
-          alignItems: "start",
-          marginTop: "40px"
-        }}
-      >
+      {/* TEXTO */}
+      <section className="intro-text-block">
+        <h2>Un recuerdo que queda</h2>
 
-        {/* IMAGEN */}
-        <div>
-          <img
-            src="/servicios/fotoimanes2.jpg"
-            style={{
-              width: "100%",
-              borderRadius: "20px"
-            }}
-          />
-        </div>
+        <p>
+          Los fotoimanes son un recuerdo físico del evento que cada invitado puede llevarse.
+          Las fotos se imprimen en papel Kodak, se montan sobre imán y se exhiben para que
+          cada persona elija la suya.
+        </p>
+      </section>
 
-        {/* TEXTO */}
-        <div>
+      {/* GALERÍA */}
+      <section className="gallery-block">
+        <div className="gallery-grid">
+          <img src="/servicios/fotoimanes.jpg" />
+          <img src="/servicios/fotoimanes2.jpg" />
+          <img src="/servicios/fotoimanes3.jpg" />
+         </div>
+      </section>
 
-          {/* BLOQUE PRINCIPAL */}
-          <div
-            style={{
-              fontSize: "18px",
-              lineHeight: "30px",
-              marginBottom: "30px",
-              maxWidth: "500px"
-            }}
-          >
-            <p style={{ marginBottom: "16px" }}>
-              Convertimos las fotos del evento en recuerdos únicos que tus invitados se llevan al instante.
-            </p>
+      {/* COMO FUNCIONA */}
+      <section className="how">
+        <div className="how-container">
 
-            <p style={{ marginBottom: "16px" }}>
-              Cada imagen se imprime en papel fotográfico de alta calidad y se transforma en un imán listo para colocar en cualquier superficie.
-            </p>
+          <h2>¿Cómo funciona?</h2>
 
-            <p>
-              Un detalle original, personalizado y súper valorado por todos.
-            </p>
+          <div className="how-grid">
+
+            <div className="how-card">
+              <div className="icon">📸</div>
+              <h3>Capturamos las fotos</h3>
+              <p>Durante el evento se toman las fotos de los invitados</p>
+            </div>
+
+            <div className="how-card">
+              <div className="icon">🖨️</div>
+              <h3>Se imprimen y preparan</h3>
+              <p>Se imprimen en calidad Kodak y se montan sobre imán</p>
+            </div>
+
+            <div className="how-card">
+              <div className="icon">🧲</div>
+              <h3>Los invitados eligen</h3>
+              <p>Se exhiben para que cada persona se lleve su recuerdo</p>
+            </div>
+
           </div>
 
-          {/* COMO FUNCIONA */}
-          <h3 style={{ marginBottom: "10px" }}>¿Cómo funciona?</h3>
+        </div>
+      </section>
 
-          <ul
-            style={{
-              marginBottom: "30px",
-              lineHeight: "28px",
-              listStyle: "none",
-              padding: 0
-            }}
-          >
-            <li style={{ marginBottom: "8px" }}>📸 Las fotos se toman durante el evento</li>
-            <li style={{ marginBottom: "8px" }}>🖨️ Se imprimen en papel fotográfico Kodak</li>
-            <li style={{ marginBottom: "8px" }}>🧲 Se montan sobre imán</li>
-            <li>🎁 Se exhiben para que cada invitado elija la suya</li>
-          </ul>
+      {/* INCLUDES */}
+      <section className="includes">
+        <div className="includes-container">
 
-          {/* INCLUYE */}
-          <h3 style={{ marginBottom: "10px" }}>¿Qué incluye?</h3>
+          <h2>¿Qué incluye el servicio?</h2>
 
-          <ul
-            style={{
-              marginBottom: "30px",
-              lineHeight: "28px",
-              listStyle: "none",
-              padding: 0
-            }}
-          >
-            <li style={{ marginBottom: "8px" }}>✨ Impresión en calidad fotográfica (Kodak)</li>
-            <li style={{ marginBottom: "8px" }}>🧲 Imán adhesivo de alta calidad</li>
-            <li style={{ marginBottom: "8px" }}>🖼️ Presentación en panel exhibidor</li>
-            <li>🎉 Cantidad adaptada a tu evento</li>
-          </ul>
-
-          
-          {/* UPSELL */}
-          <p
-            style={{
-              marginTop: "40px",
-              fontStyle: "italic",
-              opacity: 0.8
-            }}
-          >
-            💡 Tip: combiná Fotoimanes con Memory Phone y multiplicá los recuerdos.
-          </p>
+          <div className="includes-grid">
+            {[
+              {
+                icon: "📸",
+                title: "Fotos del evento",
+                text: "Capturadas por fotógrafo durante la fiesta"
+              },
+              {
+                icon: "🖨️",
+                title: "Impresión Kodak",
+                text: "Alta calidad fotográfica profesional"
+              },
+              {
+                icon: "🧲",
+                title: "Formato imán",
+                text: "Listos para colocar en cualquier superficie"
+              },
+              {
+                icon: "🖼️",
+                title: "Exhibición",
+                text: "Panel para que los invitados elijan su foto"
+              },
+              {
+                icon: "🎁",
+                title: "Souvenir único",
+                text: "Un recuerdo personalizado del evento"
+              }
+            ].map((item, i) => (
+              <div key={i} className="card">
+                <div className="icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
 
         </div>
-
-      </div>
+      </section>
 
     </ServicePage>
   );
