@@ -397,7 +397,7 @@ export default function ServicePage({
             }
           }
 
-        /* MOBILE */
+        
         /* 📱 MOBILE */
           @media (max-width: 768px) {
 
@@ -408,9 +408,11 @@ export default function ServicePage({
               text-align: center;
               gap: 20px;
             }
-
+                         
+          }
             .hero-logo {
               margin: 0 auto;
+              width: 300px;
             }
 
             .intro-text-block {

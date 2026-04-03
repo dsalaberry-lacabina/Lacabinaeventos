@@ -236,10 +236,38 @@ export default function Home() {
             <img src="/testimonios/2.jpg" />
             <img src="/testimonios/3.jpg" />
            
-    </div>
+        </div>
 
-  </div>
-</section>
+         </div>
+       </section>
+
+          {/* GALERÍA */}
+          <section style={{ padding: "60px 20px", textAlign: "center" }}>
+
+            <h2 style={{ fontSize: "36px", marginBottom: "30px" }}>
+              Momentos reales
+            </h2>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(6, 1fr)",
+                gap: "10px",
+                maxWidth: "1100px",
+                margin: "0 auto"
+              }}
+            >
+
+              <GalleryImage src="/galeria/foto1.jpg" index={0} />
+              <GalleryImage src="/galeria/foto2.jpg" index={1} />
+              <GalleryImage src="/galeria/foto3.jpg" index={2} />
+              <GalleryImage src="/galeria/foto4.jpg" index={3} />
+              <GalleryImage src="/galeria/foto5.jpg" index={4} />
+              <GalleryImage src="/galeria/foto6.jpg" index={5} />
+
+            </div>
+
+          </section>
        
       {/* COMBOS */}
       <section
