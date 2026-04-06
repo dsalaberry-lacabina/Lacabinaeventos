@@ -319,6 +319,17 @@ export default function Home() {
 
         <a href="https://wa.me/5493446642745" target="_blank">
           <button
+            onClick={() => {
+              // Evento para Google Analytics
+              // @ts-ignore
+              window.gtag && window.gtag('event', 'click_whatsapp', {
+                event_category: 'contacto',
+                event_label: 'boton_whatsapp'
+              });
+
+              // Abrir WhatsApp
+              window.open("https://wa.me/5493446642745", "_blank");
+            }}
             style={{
               marginTop: "30px",
               padding: "15px 30px",
@@ -394,35 +405,41 @@ export default function Home() {
 
   
       {/* BOTÓN WHATSAPP FLOTANTE */}
-    <a
-       href="https://wa.me/5493446642745"
-       target="_blank"
-       style={{
-        position: "fixed",
-        bottom: "20px",
-        right: "20px",
-        width: "60px",
-        height: "60px",
-        background: "#25D366",
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        animation: "pulseWhatsapp 2.2s infinite",
-        zIndex: 999,
-        boxShadow: "0 6px 15px rgba(0,0,0,0.3)",
-      }}
-     >
-
-  <img
-    src="/whatsapp.svg"
-    style={{
-      width: "32px",
-      height: "32px"
-    }}
-  />
-
-</a>
+   <a
+        href="https://wa.me/5493446642745"
+        target="_blank"
+        onClick={() => {
+          if (typeof window !== "undefined" && window.gtag) {
+            window.gtag('event', 'click_whatsapp', {
+              event_category: 'contacto',
+              event_label: 'boton_flotante'
+            });
+          }
+        }}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          width: "60px",
+          height: "60px",
+          background: "#25D366",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          animation: "pulseWhatsapp 2.2s infinite",
+          zIndex: 999,
+          boxShadow: "0 6px 15px rgba(0,0,0,0.3)",
+        }}
+      >
+        <img
+          src="/whatsapp.svg"
+          style={{
+            width: "32px",
+            height: "32px"
+          }}
+        />
+      </a>
 
     </main>
   );
